@@ -4,8 +4,8 @@
 # assume that your function returns 0 when the reversed integer overflows.
 
 
-
-class Solution(object):
+#Solution1
+class Solution1(object):
     def reverse(self, x):
         if x < -2**31 or x > 2**31-1: return 0
         else:
@@ -18,55 +18,31 @@ class Solution(object):
                 temp2 = temp[::-1] 
                 print(temp2)
                 revst = "-" + temp2
-        
             if int(revst) <-2**31 or int(revst) > 2**31-1: return 0
             else: return int(revst)
-
-
-
-rev = Solution()
+rev = Solution1()
 print(rev.reverse(-120))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# class Solution(object):
-#     def reverse(self, x):
-#        if x >= 2**31-1 or x <= -2**31: return 0
-#        else:
-#             strg = str(x)
-#             if x >= 0 :
-#                 revst = strg[::-1]
-#             else:
-#                 temp = strg[1:] 
-#                 temp2 = temp[::-1] 
-#                 revst = "-" + temp2
-#             if int(revst) >= 2**31-1 or int(revst) <= -2**31: return 0
-#             else: return int(revst) 
-        
-
-# rev = Solution()
-# print(rev.reverse(123456))
-        
+#Solution2
+class Solution2(object):
+    def reverse(self, x):
+        if x >= 2**31-1 or x <= -2**31: return 0
+        else:
+            list_x = list(str(x))
+            if  x>0:
+                list_x = list_x[::-1]
+                list_x_int = int("".join(list_x))
+            else:
+                sign = list_x.pop(0)
+                list_x = list_x[::-1]
+                list_x.insert(0,sign)
+                list_x_int = int("".join(list_x))
+            if list_x_int >=(2**31)-1 or list_x_int <=(-2**31):
+                return 0
+            else: return list_x_int
+            
+            
+sol = Solution2()
+print(sol.reverse(-123))
+print(sol.reverse(123))
+print(sol.reverse(-1534236469))
