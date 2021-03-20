@@ -1,3 +1,5 @@
+#Depth first search
+
 adjacent_matrix={
     'A':['B','E'],
     'B':['A','C','E'],
