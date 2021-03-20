@@ -20,7 +20,7 @@ def dfs_iter1(start):
     stack.append(start)
     while stack:
         current = stack.pop()
-        if current not in visited: #if popped item' not been visited
+        if current not in visited: 
             visited.append(current)
             print("Visited item:",visited)
             #print("Current stack is: ",stack)
@@ -38,7 +38,7 @@ def dfs_iter2(vertex, visited):
     stack.append(vertex)
     while stack:
         current = stack.pop()
-        if current not in visited: #if popped item' not been visited
+        if current not in visited: 
             visited.append(current)
             print("Visited item:",visited)
             #print("Current stack is: ",stack)
