@@ -15,3 +15,4 @@ arr = ["flower","flow","flight"]
 arr2 = ["dog","racecar","car"]
 print(s.longestCommonPrefix(arr))
 
+
