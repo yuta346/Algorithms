@@ -6,12 +6,9 @@ class Solution(object):
            return " "
         else:
             s = re.sub(r'[^a-zA-Z0-9]', '', s).lower()
-        if s == s[::-1]:
-            return True
-        return False
+        return s == s[::-1]
 
 sol = Solution()
 s = "A man, a plan, a canal: Panama"
-s = "race a car"
-#s = " "
+#s = "race a car"
 print(sol.isPalindrome(s))
