@@ -14,12 +14,19 @@
 import random
 class Solution(object):
     def countPrimes(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        nums = [True for x in range(n)]
         prime_count = 0
+
+        for i in range(2,n):
+            if nums[i]==True:
+                for j in range(i*i,n,i):
+                    if nums[j]==True:
+                        nums[j]=False
         
+        for k in range(2,n):
+            if nums[k]==True:
+                prime_count+=1
+        return prime_count
 
 sol = Solution()
 print(sol.countPrimes(10))
