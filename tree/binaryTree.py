@@ -30,7 +30,6 @@ class binaryTree:
             self.printTree(root.left)
             print(root.data)
             self.printTree(root.right)
-            print(root.data)
         
 
 tree = binaryTree(5)
