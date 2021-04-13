@@ -5,11 +5,11 @@ class binaryTreeNode:
         self.right = right
     
 class binaryTree:
-    def __init__(self):
-        self.head = binaryTreeNode()
+    def __init__(self,root):
+        self.root = binaryTreeNode(root)
 
-    def insertBst(self, num, tree):
-        pass
+    def insertBst(self, num, head):
+        tree.root = self.insertNode(num, head)
 
     def insertNode(self, num, node):
         
@@ -27,5 +27,6 @@ class binaryTree:
 
         return node
 
-bst = binaryTree()
-bst.insertNode(5, )
+tree = binaryTree(1)
+
+print(tree.root.data)
