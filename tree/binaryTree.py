@@ -33,21 +33,23 @@ class binaryTree:
 
     def printPostOrder(self, root):
           if root is not None:
+            self.printPostOrder(root.left)
+            self.printPostOrder(root.right)
             print(root.data)
-            self.printPreOrder(root.left)
-            self.printPreOrder(root.right)
     
 
 tree = binaryTree(10)
 tree.insertBst(7,tree.root)
 tree.insertBst(11,tree.root)
 tree.insertBst(6,tree.root)
+tree.insertBst(1,tree.root)
 tree.insertBst(8,tree.root)
 tree.insertBst(9,tree.root)
 tree.insertBst(20,tree.root)
 tree.insertBst(14,tree.root)
 tree.insertBst(22,tree.root)
-tree.printPreOrder(tree.root)
+# tree.printPreOrder(tree.root)
+tree.printPostOrder(tree.root)
 
 # print(tree.root.data)
 # print(tree.root.left.data)
