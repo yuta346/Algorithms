@@ -24,23 +24,33 @@ class binaryTree:
         elif num > node.data:
             node.right = self.insertNode(num, node.right)
         return node
-
-    def printTree(self, root): 
-        if root is not None:
-            self.printTree(root.left)
+    
+    def printPreOrder(self, root):
+          if root is not None:
             print(root.data)
-            self.printTree(root.right)
-        
+            self.printPreOrder(root.left)
+            self.printPreOrder(root.right)
 
-tree = binaryTree(5)
-tree.insertBst(9,tree.root)
+    def printPostOrder(self, root):
+          if root is not None:
+            print(root.data)
+            self.printPreOrder(root.left)
+            self.printPreOrder(root.right)
+    
+
+tree = binaryTree(10)
 tree.insertBst(7,tree.root)
-tree.insertBst(3,tree.root)
+tree.insertBst(11,tree.root)
+tree.insertBst(6,tree.root)
 tree.insertBst(8,tree.root)
-tree.insertBst(12,tree.root)
-
-tree.printTree(tree.root)
+tree.insertBst(9,tree.root)
+tree.insertBst(20,tree.root)
+tree.insertBst(14,tree.root)
+tree.insertBst(22,tree.root)
+tree.printPreOrder(tree.root)
 
 # print(tree.root.data)
+# print(tree.root.left.data)
+# print(tree.root.left.left.data)
 # print(tree.root.right.data)
 # print(tree.root.right.right.data)
