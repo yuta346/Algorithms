@@ -8,6 +8,10 @@ class binaryTree:
     def __init__(self,root):
         self.root = binaryTreeNode(root)
 
+    #returns true if root is empty and false otherwise
+    def isEmpty(self, root):
+        return root is None
+
     #Pre:tree is initialized
     #Post:call the recursive function insertNodes to insert the node in the tree and return the head node
     def insertBst(self, num, head):
@@ -49,7 +53,7 @@ class binaryTree:
             self.printInOrder(root.right)
 
     #Pre:tree is initialized
-    #Post:call the recursive function countNodes to count the nodes in the tree and return nuber of nodes
+    #Post:call the recursive function countNodes to count the number of nodes in the tree and return nuber of nodes
     def getLength(self, root):
         return self.countNodes(root)
     
@@ -78,6 +82,7 @@ tree.insertBst(22,tree.root)
 # tree.printPostOrder(tree.root)
 # tree.printInOrder(tree.root)
 print(tree.getLength(tree.root))
+print(tree.isEmpty(tree.root))
 
 # print(tree.root.data)
 # print(tree.root.left.data)
