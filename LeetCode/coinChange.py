@@ -11,16 +11,20 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        count_matrix = [[1]+[0]*amount for _ in coins]
+        count_matrix = [[0]*(amount+1) for _ in coins]
         
         for i in range(len(coins)):
             for j in range(1, amount+1):
-                without_this_coin = (count_matrix[i-1][j]+1 if i>=1 else 0)
-                with_this_coin = (count_matrix[i-1][j] + count_matrix[i][j-coins[i]] if j-coins[i]>=0 else 0) 
+                without_this_coin = (count_matrix[i-1][j] if i>=0 else 0)
+                with_this_coin = ( count_matrix[i][count_matrix[i-1][j]-coins[i]]+1  if j>=coins[i] else 0) 
+                count_matrix[i][j] = min(without_this_coin , with_this_coin)
 
-                count_matrix[i][j] = min(without_this_coin, with_this_coin)
         print(count_matrix)
         return count_matrix[-1][-1]
+        # if count_matrix[-1][-1] >0:
+        #     return count_matrix[-1][-1]
+
+        # else: return -1
 
 
 
