@@ -11,22 +11,14 @@ class Solution(object):
         :type amount: int
         :rtype: int
         """
-        count_matrix = [[0]*(amount+1) for _ in coins]
+        dp = [float('inf')for _ in range(amount+1)]
+        dp[0]=0
         
-        for i in range(len(coins)):
-            for j in range(1, amount+1):
-                without_this_coin = (count_matrix[i-1][j] if i>=0 else 0)
-                with_this_coin = ( count_matrix[i][count_matrix[i-1][j]-coins[i]]+1  if j>=coins[i] else 0) 
-                count_matrix[i][j] = min(without_this_coin , with_this_coin)
-
-        print(count_matrix)
-        return count_matrix[-1][-1]
-        # if count_matrix[-1][-1] >0:
-        #     return count_matrix[-1][-1]
-
-        # else: return -1
-
-
+        for i in range(len(dp)):
+            for coin in coins:
+                if i-coin>=0:
+                    dp[i] = min(dp[i], dp[i-coin]+1)
+        return -1 if dp[-1]==float('inf') else dp[-1]
 
 sol = Solution()
 coins = [1,2,5]
