@@ -16,14 +16,22 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        if len(nums)==1:
-            return nums
-        else:
-            for num in nums:
-                if num==0:
-                    nums.remove(num)
-                    nums.append(0)
-                    
+       
+        # for num in nums:
+        #     if num==0:
+        #         nums.remove(num)
+        #         nums.append(0)
+
+        pointer = 0
+        count_zeros = 0
+        for n in nums:
+            if n!=0:
+                nums[pointer] = n
+                pointer+=1
+            else: count_zeros+=1
+        for i in range(1,count_zeros+1):
+           nums[-i] = 0
+        return nums
 sol = Solution()
 nums = [0,1,0,3,12]
 # nums = [0,0,1]
