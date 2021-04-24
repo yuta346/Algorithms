@@ -12,6 +12,7 @@
 # Input: nums1 = [1], m = 1, nums2 = [], n = 0
 # Output: [1]
 
+import copy
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         """
@@ -22,13 +23,34 @@ class Solution(object):
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
         
+        # del nums1[m:]
+        # nums1.extend(nums2)
+        # nums1.sort()
         
-
+        temp = copy.deepcopy(nums1)
+        i=j=k=0
+        while m>i and n>j:
+            if temp[i]<nums2[j]:
+                nums1[k] = temp[i]
+                i+=1
+            else:
+                nums1[k] = nums2[j]
+                j+=1
+            k+=1
+        while i<m:
+            nums1[k] = temp[i]
+            i+=1
+            k+=1
+        while j<n:
+            nums1[k] = nums2[j]
+            j+=1
+            k+=1
+        return nums1
 
 
 sol = Solution()
-nums1 = [2,0]
+nums1 = [1,2,3,0,0,0]
 m = 3
-nums2 = [1]
+nums2 = [2,5,6]
 n = 3
 print(sol.merge(nums1,m,nums2,n))
