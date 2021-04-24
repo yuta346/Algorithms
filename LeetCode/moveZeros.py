@@ -16,12 +16,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-       
-        # for num in nums:
-        #     if num==0:
-        #         nums.remove(num)
-        #         nums.append(0)
-
         pointer = 0
         count_zeros = 0
         for n in nums:
