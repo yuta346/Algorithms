@@ -10,7 +10,7 @@ graph = { 'A': {'B':1,'E':4,'F':8},
          'G':{'F':1,'H':1},
          'H':{}}
 
-def dijkstra(graph, start):
+def bellmanFord(graph, start):
     dist = {vertex: np.inf for vertex in graph}      #distance matrix
     dist[start] = 0                                     #set A's distance to 0
     prev = {vertex:None for vertex in graph}            #prev(u)=nil
@@ -32,6 +32,6 @@ def dijkstra(graph, start):
 
 
 
-dijkstra(graph, "A")
+bellmanFord(graph, "A")
 
 
