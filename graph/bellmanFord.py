@@ -17,7 +17,6 @@ def bellmanFord(graph, start):
 
     for _ in range(len(graph)-1):
         for vertex in graph:
-            print(vertex)
             for neighbor in graph[vertex]:
                 if dist[neighbor] > dist[vertex] + graph[vertex][neighbor]:
                     dist[neighbor] = dist[vertex] + graph[vertex][neighbor]
