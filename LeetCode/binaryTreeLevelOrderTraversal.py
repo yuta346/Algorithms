@@ -12,13 +12,17 @@ class Solution(object):
         """ 
         if root is None:
             return 
-        quque = []
-        quque.append(root)
+        queue = [root]
+        result = []
         while queue:
-            current = queue.pop()
-            print(current.val)
-            if current.left is not None:
-                queue.push(current.left)
-            if current.right is not None:
-                queue.push(current.right)
-            queue.pop()
+            queue_length = len(queue)
+            current_level = []
+            for i in range(queue_length):
+                current = queue.pop()
+                current_level.append(current.val)
+                if current.left is not None:
+                    queue.append(current.left)
+                if current.right is not None:
+                    queue.append(current.right)
+            result.append(current_level)
+        return result
