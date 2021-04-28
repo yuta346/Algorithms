@@ -18,7 +18,7 @@ class Solution(object):
             queue_length = len(queue)
             current_level = []
             for i in range(queue_length):
-                current = queue.pop()
+                current = queue.pop(0)
                 current_level.append(current.val)
                 if current.left is not None:
                     queue.append(current.left)
