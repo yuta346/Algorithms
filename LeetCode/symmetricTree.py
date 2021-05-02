@@ -10,14 +10,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        return self.symmetric_helper(root,root)
+        return self.symmetric_helper(root.left,root.right)
 
-    def symmetric_helper(root1,root2):
+    def symmetric_helper(self,root1,root2):
         
-        if not root1  and not root2: return None
-        
-        
+        if root1==None  and root2==None: return True
+        elif root1==None or root2==None: return False
+        else:
+            return root1.val==root2.val and self.symmetric_helper(root1.left, root2.right) and self.symmetric_helper(root1.right,root2.left)
 
-        self.symmetric_helper(root1.left, root2.right)
-        self.symmetric_helper(root1.right,root2.left)
-        
