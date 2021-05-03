@@ -33,6 +33,17 @@ class Solution(object):
         return dp[-1]
 
 
+#Recursive
+#Time Limit Exceeded
+class Solution(object):
+    def climbStairs(self, n):
+        if n==0:
+            return 1
+        if n==1:
+            return 1
+        return self.climbStairs(n-1)+self.climbStairs(n-2)
+
+
 
 sol = Solution()
 # print(sol.climbStairs(2))
