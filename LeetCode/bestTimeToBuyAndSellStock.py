@@ -1,3 +1,4 @@
+#Time Complexity: O(n)
 class Solution(object):
      def maxProfit(self, prices):
         min = prices[0]
@@ -8,7 +9,6 @@ class Solution(object):
             else:
                 maxVal = max(maxVal, prices[i]-min)
         return maxVal
-
 
 s = Solution()
 #prices = [7,1,5,3,6,4]
