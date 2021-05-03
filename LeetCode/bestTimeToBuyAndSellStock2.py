@@ -1,3 +1,4 @@
+#Solution 1
 class Solution(object):
     def maxProfit(self, prices):
         minVal = prices[0]
@@ -10,6 +11,15 @@ class Solution(object):
                 minVal = prices[i] #shift minVal
         return profit
 
+
+#Solution 2
+class Solution(object):
+    def maxProfit(self, prices):
+        profit = 0
+        for i in range(len(prices)-1):
+            if prices[i]<prices[i+1]:
+                profit+=prices[i+1]-prices[i]
+        return profit
 
 s = Solution()
 prices = [7,1,5,3,6,4]
