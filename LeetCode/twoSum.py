@@ -28,8 +28,7 @@ class Solution(object):
             if num in list(complement_dict.keys()):
                 return complement_dict[num],index
             else:
-                complement = target-num
-                complement_dict[complement]=index
+                complement_dict[target-num]=index
             
 
 
