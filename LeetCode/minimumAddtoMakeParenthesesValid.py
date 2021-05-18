@@ -27,19 +27,19 @@
 
 
 class Solution(object):
-    def minAddToMakeValid(self, S):
+    def minAddToMakeValid(self, s):
         """
         :type S: str
         :rtype: int
         """
         stack=[]
-        for s in S:
-            if s==')':
-                if stack and stack[-1]=='(':
+        for i in s:
+            if stack:
+                if i == ')' and stack[-1]=='(':
                     stack.pop()
                     continue
-            stack.append(s)
-        return stack
+            stack.append(i)
+        return len(stack)
            
 
                 
