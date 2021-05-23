@@ -23,6 +23,7 @@ class Solution(object):
         result = [[]]
         for num in nums:
             for i in range(len(result)):
+                print(i)
                 result.append([num] + result[i])
         print(result)
         return result
