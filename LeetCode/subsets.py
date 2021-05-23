@@ -20,18 +20,15 @@ class Solution(object):
         :rtype: List
         [List[int]]
         """
-        result = [[], nums]
-        for i in range(len(nums)):
-            if [nums[i]] not in result:
-                result.append([nums[i]])
-            for j in range(len(nums)):
-                if [nums[j]] not in result and i !=j and [nums[i],nums[j]] not in result: 
-                    result.append([nums[i],nums[j]])
+        result = [[]]
+        for num in nums:
+            for i in range(len(result)):
+                result.append([num] + result[i])
         print(result)
         return result
 
 sol = Solution()
-nums = [1,2,3]
+# nums = [1,2,3]
 # nums = [1,2]
 nums = [3,2,4,1]
 sol.subsets(nums)
