@@ -37,6 +37,7 @@ class Solution(object):
                 print('second for loop perm',perm)
                 perm.append(n)
                 print('perm after append',perm)
+                
             result.extend(perms)
             print('result',result)
             nums.append(n)
