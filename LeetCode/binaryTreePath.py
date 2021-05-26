@@ -17,7 +17,6 @@ class Solution(object):
             if root is None:
                 return 
             path += str(root.val)
-            print(path)
             dfs(result, root.left, path+"->")
             dfs(result, root.right, path+"->")
             if root.left is None and root.right is None:
