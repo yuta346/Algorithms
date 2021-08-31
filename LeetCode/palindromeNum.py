@@ -28,7 +28,16 @@ class Solution(object):
             return True
         else:
             return False
+
+    def isPalindrome2(self, x):
+        print(str(x)[::-1])
+        print(x)
+        if str(x)[::-1] == str(x):
+            return True
+        else:
+            return False
+        
         
 
 s = Solution()
-print(s.isPalindrome(121))
+print(s.isPalindrome2(121))

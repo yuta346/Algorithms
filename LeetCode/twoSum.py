@@ -25,15 +25,16 @@ class Solution(object):
     def twoSum2(self, nums, target):
         complement_dict={}
         for index,num in enumerate(nums):
+            print(complement_dict)
             if num in list(complement_dict.keys()):
-                return complement_dict[num],index
+                return [complement_dict[num],index]
             else:
                 complement_dict[target-num]=index
             
 
 
 sol = Solution()
-print(sol.twoSum([3,2,4],6))
+#print(sol.twoSum([3,2,4],6))
 print(sol.twoSum2([3,2,4],6))
 # print(sol.twoSum([3,3],6))
 # print(sol.twoSum([2,5,5,11],10))
